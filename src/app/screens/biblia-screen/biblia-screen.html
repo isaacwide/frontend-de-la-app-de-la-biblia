@@ -1,1 +1,60 @@
-<p>biblia-screen works!</p>
+<div class="container">
+  <div class="church-header">
+    <p class="church-title">Reina Valera 1960</p>
+    <p class="church-name">Buscar Versículo</p>
+    <div class="divider"></div>
+  </div>
+
+  <div class="content-row">
+
+    <!-- Izquierda: selectores -->
+    <div class="panel-left">
+      <p class="card-label">Selecciona la referencia</p>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Libros</mat-label>
+        <mat-select [(ngModel)]="respuesta.libro" (ngModelChange)="onLibroChange()">
+          @for (area of biblia; track $index) {
+            <mat-option [value]="area.index">{{ area.name }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Capítulo</mat-label>
+        <mat-select [(ngModel)]="respuesta.capitulo" (ngModelChange)="onCapituloChange()">
+          @for (cap of capitulos; track $index) {
+            <mat-option [value]="cap.capitulo">Capítulo {{ cap.capitulo }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Versículo</mat-label>
+        <mat-select [(ngModel)]="respuesta.versiculo">
+          @for (v of versiculos; track $index) {
+            <mat-option [value]="v">Versículo {{ v }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+
+      <button class="btn-buscar" (click)="buscarVersiculo()">Buscar</button>
+      <button class="btn-buscar" (click)="abrirVentana()">Abrir en ventana</button>
+    </div>
+
+    <!-- Derecha: resultado -->
+    <div class="panel-right">
+      @if (resultado) {
+        <div class="resultado">
+          <p class="resultado-referencia">{{ resultado.libro }} {{ resultado.capitulo }}:{{ resultado.versiculo }}</p>
+          <p class="resultado-texto">{{ resultado.versiculocont }}</p>
+        </div>
+      } @else {
+        <div class="resultado-empty">
+          <p>Selecciona un versículo para verlo aquí</p>
+        </div>
+      }
+    </div>
+
+  </div>
+</div>

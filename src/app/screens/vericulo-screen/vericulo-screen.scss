@@ -1,0 +1,50 @@
+$gold: #B89040;
+$gray: #747170;
+$gray-light: #faf7f0;
+
+.detalle-container {
+  padding: 2rem;
+  background: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.church-header {
+  text-align: center;
+  margin-bottom: 2rem;
+
+  .church-title {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: $gold;
+    text-transform: uppercase;
+  }
+
+  .divider {
+    width: 40px;
+    height: 2px;
+    background: $gold;
+    margin: 10px auto 0;
+  }
+}
+
+.referencia {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: $gold;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.texto {
+  font-size: 20px;
+  color: $gray;
+  line-height: 1.8;
+  font-style: italic;
+  text-align: center;
+  max-width: 500px;
+}

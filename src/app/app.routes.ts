@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { FirstScreen } from './layouts/first-screen/first-screen';
+import { VericuloScreen } from './screens/vericulo-screen/vericulo-screen';
 export const routes: Routes = [
 
   {
@@ -10,7 +11,8 @@ export const routes: Routes = [
       {
         path: 'biblia',
         loadComponent: () => import('./screens/biblia-screen/biblia-screen').then(m => m.BibliaScreen),
-      }
+      },
+      { path: 'versiculo-detalle', component: VericuloScreen }
      
     ]
 }

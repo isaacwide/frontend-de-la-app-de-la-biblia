@@ -1,0 +1,214 @@
+// Variables de la paleta
+$gold: #B89040;
+$gold-dark: #8a6a28;
+$gray: #747170;
+$gray-light: #faf7f0;
+
+// Header estilo iglesia
+.church-header {
+  text-align: center;
+  margin-bottom: 2rem;
+
+  .church-title {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: $gold;
+    text-transform: uppercase;
+  }
+
+  .church-name {
+    font-size: 24px;
+    font-weight: 500;
+    color: #231F20;
+  }
+
+  .divider {
+    width: 40px;
+    height: 2px;
+    background: $gold;
+    margin: 10px auto 0;
+  }
+}
+
+// Contenedor principal
+.container {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 0.5px solid rgba(184, 144, 64, 0.25);
+}
+
+.content-row {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: flex-start;
+
+  @media (max-width: 700px) {
+    flex-direction: column;
+  }
+}
+
+.panel-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.panel-right {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  padding-top: 2rem;
+}
+
+.resultado-empty {
+  width: 100%;
+  padding: 2rem;
+  text-align: center;
+  color: $gray;
+  font-size: 14px;
+  border: 1px dashed rgba(184, 144, 64, 0.3);
+  border-radius: 8px;
+  font-style: italic;
+}
+
+.resultado {
+  width: 100%;
+  padding: 1.5rem;
+  background: $gray-light;
+  border-radius: 0 8px 8px 0;
+
+  .resultado-referencia {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: $gold;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+
+  .resultado-texto {
+    font-size: 16px;
+    color: $gray;
+    line-height: 1.8;
+    font-style: italic;
+  }
+}
+
+// Label superior de sección
+.card-label {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: $gold;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+// Selectores de Angular Material con tema dorado
+mat-form-field {
+  width: 100% !important;
+  margin-left: 0 !important;
+
+  // Borde dorado al enfocar
+  &.mat-focused .mdc-notched-outline__leading,
+  &.mat-focused .mdc-notched-outline__notch,
+  &.mat-focused .mdc-notched-outline__trailing {
+    border-color: $gold !important;
+  }
+
+  // Label dorado al enfocar
+  &.mat-focused .mdc-floating-label {
+    color: $gold !important;
+  }
+
+  // Borde normal con tono dorado suave
+  .mdc-notched-outline__leading,
+  .mdc-notched-outline__notch,
+  .mdc-notched-outline__trailing {
+    border-color: rgba(184, 144, 64, 0.4) !important;
+  }
+}
+
+// Fila de selectores
+.selectores-row {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  width: 100%;
+
+  mat-form-field { flex: 1; }
+
+  @media (max-width: 700px) {
+    flex-direction: column;
+  }
+}
+
+// Botón buscar
+.btn-buscar {
+  width: 100%;
+  height: 42px;
+  background-color: $gold;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 1rem;
+
+  &:hover { background-color: $gold-dark; }
+}
+
+// Resultado del versículo
+.resultado {
+  padding: 1rem 1.25rem;
+  background: $gray-light;
+  border-radius: 0 8px 8px 0;
+  margin-top: 1.25rem;
+
+  .resultado-referencia {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: $gold;
+    margin-bottom: 6px;
+    font-weight: 500;
+  }
+
+  .resultado-texto {
+    font-size: 15px;
+    color: $gray;
+    line-height: 1.7;
+    font-style: italic;
+  }
+}
+
+// Opciones del dropdown
+.cdk-overlay-pane {
+  .mat-mdc-select-panel {
+    background-color: #ffffff !important;
+    border-radius: 6px;
+  }
+
+  .mat-mdc-option {
+    color: #333 !important;
+
+    &:hover:not(.mdc-list-item--disabled) {
+      background-color: $gray-light !important;
+    }
+
+    &.mdc-list-item--selected:not(.mdc-list-item--disabled) {
+      background-color: rgba(184, 144, 64, 0.1) !important;
+
+      .mdc-list-item__primary-text {
+        color: $gold-dark !important;
+        font-weight: 500;
+      }
+    }
+  }
+}
